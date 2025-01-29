@@ -16,11 +16,9 @@ export default function Home() {
   return (
     <div className="home-page-container">
       <div className="home-description-left-wrapper">
-        <p>
-          <strong>
+        <h3>
             Želite kristalno čistu vodu u svom bazenu bez brige o održavanju?
-          </strong>
-        </p>
+        </h3>
         <p>Mi smo ovde da vam pomognemo!</p>
         <p>
           Naša stručna ekipa pruža usluge profesionalnog čišćenja i održavanja
@@ -37,12 +35,12 @@ export default function Home() {
           {!afterClicked ? (
             <div className="image-before-wrapper">
               <img className="right-description-image" src={PrljavBazen} />
-              <label>Posle</label>
+              <h3>Pre</h3>
             </div>
           ) : (
             <div className="image-before-wrapper">
               <img className="right-description-image" src={CistBazen} />
-              <label>Pre</label>
+              <h3>Posle</h3>
             </div>
           )}
           <ArrowForwardIosIcon
@@ -52,9 +50,9 @@ export default function Home() {
           />
         </div>
         <div className="right-desc-wrapper">
-          <p>
-            <strong>Šta nudimo?</strong>
-          </p>
+          <h3>
+           Šta nudimo?
+          </h3>
           <p>
             • Kompletno čišćenje bazena – od uklanjanja nečistoća do tretmana
             vode.
@@ -71,9 +69,9 @@ export default function Home() {
         </div>
       </div>
       <div className="home-description-left-wrapper">
-        <p>
-          <strong>Zašto odabrati nas?</strong>
-        </p>
+        <h3>
+          Zašto odabrati nas?</strong>
+        </h3>
         <p>• Iskusni i profesionalni tim.</p>
         <p>• Korišćenje kvalitetnih proizvoda i opreme.</p>
         <p>• Brza i pouzdana usluga prilagođena vašim potrebama.</p>
