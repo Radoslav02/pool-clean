@@ -1,112 +1,175 @@
-h3{
-    margin-bottom: 5px;
+h3 {
+  margin-bottom: 5px;
 }
 
-.home-page-container{
-    width: 100%;
-    min-height:533px;
-    border-top: 4px double rgb(88, 141, 255);
-    border-bottom: 4px double rgb(88, 141, 255);
-    font-size: 20px;
+.home-page-container {
+  width: 100%;
+  min-height: 533px;
+  border-top: 4px double rgb(88, 141, 255);
+  border-bottom: 4px double rgb(88, 141, 255);
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.home-description-left-wrapper{
-    height: 300px;
+.home-description-left-wrapper {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 10px 10px 220px;
+  justify-content: center;
+  
+}
+
+.home-description-right-wrapper {
+  height: 390px;
+  width: 100%;
+  display: flex;
+  background-color: rgb(88, 141, 255);
+  align-items: center;
+  padding-left: 190px;
+  gap: 100px;
+  color: white;
+  
+}
+
+.image-arrows-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.image-before-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrows {
+  color: rgb(88, 141, 255);
+  font-size: 40px;
+}
+
+.arrows:hover {
+  color: rgb(23, 97, 255);
+}
+
+.right-description-image {
+  width: 350px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.right-desc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.home-contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 50px;
+}
+
+.home-contact-wrapper button {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background: none;
+  border-radius: 5px;
+    color: white;
+}
+
+.home-contact-wrapper button:hover {
+  transition: all 0.3s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.help-description-image {
+  width: 350px;
+  height: 320px;
+  object-fit: cover;
+  margin-left: 30px;
+  border-radius: 5px;
+}
+
+.promo-text{
+    color: white !important;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.phrase-wrapper{
     width: 100%;
+    height: 250px;
     display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding: 10px 10px 10px 220px;
+    align-items: center;
     justify-content: center;
 }
 
-.home-description-right-wrapper{
-    height: 390px;
-    width: 100%;
-    display: flex;
-    background-color: #63aeff95;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.image-arrows-wrapper{
-    display: flex;
-    align-items: center;
-}
-
-.image-before-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.arrows{
-    color: rgb(88, 141, 255);
-    font-size: 40px;
-}
-
-.arrows:hover{
-    color: rgb(23, 97, 255);
-}
-
-.right-description-image{
-    width: 320px;
-    height: 320px;
-
-    border-radius: 5px;
-}
-
-.right-desc-wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-@media (max-width: 1200px){
-   
-
-    .home-description-left-wrapper{
-        padding-left: 50px;
-    }
-   
+@media (max-width: 1200px) {
+  .home-description-left-wrapper {
+    padding-left: 50px;
+  }
 }
 
 @media (max-width: 768px) {
-    p{
-        font-size: 14px;
-    }
-
-    .home-description-left-wrapper {
-      height: 200px;
-      padding: 20px
-    }
-
-    .home-description-right-wrapper{
-        display: flex;
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    .right-description-image {
-      width: 200px;
-      height: 200px;
-    }
-  
- 
+  p {
+    font-size: 14px;
   }
-  
-  @media (max-width: 480px) {
-    .home-page-container{
-        font-size: 16.5px;
-    }
-  
-    .right-description-image {
-      max-width: 100%;
-    }
-  
-    .arrows {
-      font-size: 30px;
-    }
+
+  .help-description-image {
+    margin: 0;
+    width: 250px;
+    height: 200px;
   }
+
+  .home-contact-wrapper {
+    margin: 0px;
+  }
+
+  .promo-text{
+    margin-left: 30px;
+  }
+
+  .home-description-left-wrapper {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .home-description-right-wrapper {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .right-description-image {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page-container {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+  }
+
+  .right-description-image {
+    max-width: 100%;
+  }
+
+  .arrows {
+    font-size: 30px;
+  }
+}

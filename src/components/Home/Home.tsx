@@ -1,6 +1,7 @@
 import "./Home.css";
 import CistBazen from "../../assets/CistBazen.jpeg";
 import PrljavBazen from "../../assets/PrljavBazen.jpeg";
+import PoolCleaning from "../../assets/swimming-cleaning.jpg";
 import { useState } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -17,7 +18,7 @@ export default function Home() {
     <div className="home-page-container">
       <div className="home-description-left-wrapper">
         <h3>
-            Želite kristalno čistu vodu u svom bazenu bez brige o održavanju?
+          Želite kristalno čistu vodu u svom bazenu bez brige o održavanju?
         </h3>
         <p>Mi smo ovde da vam pomognemo!</p>
         <p>
@@ -29,7 +30,6 @@ export default function Home() {
         <div className="image-arrows-wrapper">
           <ArrowBackIosNewIcon
             className="arrows"
-          
             onClick={handleAfterClicked}
           />
           {!afterClicked ? (
@@ -45,14 +45,11 @@ export default function Home() {
           )}
           <ArrowForwardIosIcon
             className="arrows"
-            
             onClick={handleAfterClicked}
           />
         </div>
         <div className="right-desc-wrapper">
-          <h3>
-           Šta nudimo?
-          </h3>
+          <h3>Šta nudimo?</h3>
           <p>
             • Kompletno čišćenje bazena – od uklanjanja nečistoća do tretmana
             vode.
@@ -69,13 +66,21 @@ export default function Home() {
         </div>
       </div>
       <div className="home-description-left-wrapper">
-        <h3>
-         Zašto odabrati nas?
-        </h3>
+        <h3>Zašto odabrati nas?</h3>
         <p>• Iskusni i profesionalni tim.</p>
         <p>• Korišćenje kvalitetnih proizvoda i opreme.</p>
         <p>• Brza i pouzdana usluga prilagođena vašim potrebama.</p>
         <p>• Transparentne cene i bez skrivenih troškova.</p>
+      </div>
+      <div className="home-description-right-wrapper">
+        <img className="help-description-image" src={PoolCleaning} />
+        <div className="home-contact-wrapper">
+          <h3 className="promo-text">Potrebna vam je stručna pomoć?</h3>
+          <button>Kontaktirajte nas</button>
+        </div>
+      </div>
+      <div className="phrase-wrapper">
+          <h2>Vaš bazen je naša briga!</h2>
       </div>
     </div>
   );
