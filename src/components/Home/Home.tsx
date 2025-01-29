@@ -70,7 +70,7 @@ export default function Home() {
       </div>
       <div className="home-description-left-wrapper">
         <h3>
-          Zašto odabrati nas?</strong>
+         Zašto odabrati nas?
         </h3>
         <p>• Iskusni i profesionalni tim.</p>
         <p>• Korišćenje kvalitetnih proizvoda i opreme.</p>
