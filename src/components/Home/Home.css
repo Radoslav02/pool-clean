@@ -1,0 +1,7 @@
+.home-page-container{
+    width: 100%;
+    min-height: 633px;
+    border-top: 4px double rgb(88, 141, 255);
+    border-bottom: 4px double rgb(88, 141, 255);
+}
+
