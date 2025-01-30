@@ -21,7 +21,7 @@ export default function Menu() {
         </div>
         <div className="menu-item">Hemija</div>
         <div className="menu-item">O nama</div>
-        <div className="menu-item">Shop</div>
+        <div className="menu-item" onClick={() => navigate("/shop-početna")}>Shop</div>
         <div className="menu-item" onClick={() => navigate("/kontakt")}>Kontakt</div>
       </div>
       <span onClick={toggleMenu} className="menu-icon">
@@ -39,7 +39,7 @@ export default function Menu() {
           </div>
           <div className="small-menu-item">Hemija</div>
           <div className="small-menu-item">O nama</div>
-          <div className="small-menu-item">Shop</div>
+          <div className="small-menu-item" onClick={() => navigate("/shop-početna")}>Shop</div>
           <div className="small-menu-item" onClick={() => navigate("/kontakt")}>Kontakt
           </div>
         </div>
