@@ -5,10 +5,21 @@ import authReducer from './authSlice';
 import searchReducer from './searchSlice';
 import cartReducer from './cartSlice'; 
 
+
 // Configuration for persistence (only for the auth slice)
 const authPersistConfig = {
   key: 'auth',
   storage,
+};
+
+interface AuthState {
+  user: null | object;
+  isAuthenticated: boolean;
+}
+
+const initialState: AuthState = {
+  user: null,
+  isAuthenticated: false,
 };
 
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
@@ -17,7 +28,8 @@ const store = configureStore({
   reducer: {
     auth: persistedAuthReducer, // Persisted auth reducer
     search: searchReducer,       // Search reducer
-    cart: cartReducer,           // Add the cart reducer
+    cart: cartReducer,   // Add the cart reducer
+    resetAuth: () => initialState,        
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

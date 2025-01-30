@@ -30,7 +30,7 @@ export default function Menu() {
         ) : (
           <ArrowBackIcon id={menuClicked ? "active" : "inactive"} />
         )}
-        <h1> LOGO</h1>
+        <h1>LOGO</h1>
       </span>
       {menuClicked && (
         <div className="small-screen-wrapper">

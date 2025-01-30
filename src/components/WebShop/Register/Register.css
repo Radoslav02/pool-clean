@@ -1,0 +1,184 @@
+.register-container {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff8e;
+}
+
+.register-form {
+  min-height: 600px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+}
+
+.register-form h2 {
+  padding: 20px;
+}
+
+.register-input-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.register-input {
+  height: 30px;
+  font-size: 16px !important;
+  border-radius: 5px;
+  background-color: #dafff8;
+  border: none;
+  padding: 5px;
+  width: 250px;
+}
+
+.register-page-button {
+  height: 40px;
+  background-color: rgb(88, 141, 255);
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 5px; height: 30px !important;
+  background-color: rgb(88, 141, 255);
+  width: 90px;
+  border-radius: 5px;
+  border: 0.5px solid black;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.register-page-button:hover {
+  background-color: #09e0b5;
+  cursor: pointer;
+}
+
+.register-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+}
+
+.inputs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+  height: 100%;
+}
+
+/* Za vrlo male uređaje (telefoni, manje od 576px) */
+@media (max-width: 575.98px) {
+  .register-container {
+    min-height: 100vw;
+  }
+
+  .register-form {
+    min-height: 900px;
+    width: 350px;
+  }
+  .register-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .inputs-wrapper {
+    gap: 20px;
+  }
+}
+
+/* Za male uređaje (telefoni u portret modu, 576px i više) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .register-container {
+    min-height: 100vw;
+  }
+
+  .register-form {
+    min-height: 800px;
+    width: 450px;
+  }
+  .register-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .inputs-wrapper {
+    gap: 30px;
+  }
+}
+
+/* Za srednje uređaje (tableti, 768px i više) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .register-container {
+    min-height: 90vw;
+  }
+
+  .register-form {
+    min-height: 800px;
+    width: 500px;
+  }
+
+  .register-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .inputs-wrapper {
+    gap: 20px;
+  }
+}
+
+/* Za velike uređaje (veći tableti ili mali laptopovi, 992px i više) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .register-container {
+    min-height: 50vw;
+  }
+
+  .register-form {
+    min-height: 600px;
+    width: 800px;
+  }
+
+  .register-wrapper {
+    gap: 20px;
+  }
+}
+
+/* Za vrlo velike uređaje (desktop računari, 1200px i više) */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .register-container {
+    min-height: 50vw;
+  }
+
+  .register-form {
+    min-height: 600px;
+    width: 800px;
+  }
+
+  .register-wrapper {
+    gap: 20px;
+  }
+}
