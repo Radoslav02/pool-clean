@@ -2,18 +2,10 @@ import "./Home.css";
 import CistBazen from "../../assets/CistBazen.jpeg";
 import PrljavBazen from "../../assets/PrljavBazen.jpeg";
 import PoolCleaning from "../../assets/swimming-cleaning.jpg";
-import { useState } from "react";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
+
 
 export default function Home() {
-  const [afterClicked, setAfterClicked] = useState<boolean>(false);
-
-  function handleAfterClicked() {
-    const clicked = afterClicked;
-    setAfterClicked(!clicked);
-  }
-
   return (
     <div className="home-page-container">
       <div className="home-description-left-wrapper">
