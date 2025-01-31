@@ -2,7 +2,8 @@
   min-height: 80vh;
   width: 100%;
   display: flex;
-
+  border-top: 4px double rgb(88, 141, 255);
+  border-bottom: 4px double rgb(88, 141, 255);
   align-items: center;
   padding: 50px;
   background-color: #ffffff8e;
@@ -17,7 +18,6 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   background-color: white;
   padding: 30px;
@@ -57,7 +57,7 @@
 }
 
 .edit-button:hover {
-  background-color: #09e0b5;
+  background-color: #a7e9ff;
   cursor: pointer;
 }
 
@@ -104,7 +104,7 @@
   height: 30px;
   font-size: 16px !important;
   border-radius: 5px;
-  background-color: #dafff8;
+  background-color: #a7e9ff;
   border: none;
   padding: 5px;
 }
@@ -128,7 +128,7 @@
 }
 
 .save-button:hover {
-  background-color: #09e0b5;
+  background-color: #a7e9ff;
   cursor: pointer;
 }
 

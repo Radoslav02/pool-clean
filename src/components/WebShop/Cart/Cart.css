@@ -6,6 +6,8 @@
     align-items: center;
     gap: 20px;
     padding: 50px;
+    border-top: 4px double rgb(88, 141, 255);
+    border-bottom: 4px double rgb(88, 141, 255);
 }
 .cart-container h2{
     width: 1200px;
@@ -92,7 +94,7 @@
 }
 
 .order-button:hover{
-    background-color: #09e0b5;
+    background-color: #a7e9ff;
     cursor: pointer;
 }
 

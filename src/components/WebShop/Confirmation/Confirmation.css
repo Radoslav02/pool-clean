@@ -6,13 +6,15 @@
   flex-direction: column;
   padding: 50px;
   gap: 20px;
+  border-top: 4px double rgb(88, 141, 255);
+  border-bottom: 4px double rgb(88, 141, 255);
 }
 
 .confirmation-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+
   border-radius: 10px;
   width: 500px;
   height: 500px;
@@ -30,7 +32,7 @@
 }
 
 .confirmation-home-button:hover{
-    background-color: #09e0b5;
+    background-color: #a7e9ff;
     cursor: pointer;
 }
 

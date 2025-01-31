@@ -15,12 +15,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Tooltip from "@mui/material/Tooltip";
 import { ScaleLoader } from "react-spinners";
 import EditItemModal from "../Modals/EditItemModal";
-import Filter from "../Filter/Filter"; 
+import Filter from "../Filter/Filter";
 import { useSelector } from "react-redux";
 import Sort from "../Sort/Sort";
 import { RootState } from "../../Redux/store";
 import { db, storage } from "../../firestore";
-
 
 type Product = {
   productId: string;
@@ -53,9 +52,9 @@ export default function AdminPanel() {
     genders: [] as string[],
     sizes: [] as string[],
   });
-  const [sortBy, setSortBy] = useState<string>("nameAsc"); 
+  const [sortBy, setSortBy] = useState<string>("nameAsc");
 
-  const searchQuery = useSelector((state: RootState) => state.search.query); 
+  const searchQuery = useSelector((state: RootState) => state.search.query);
 
   const handleNewItemClicked = () => {
     setNewItemClicked(true);
@@ -217,7 +216,6 @@ export default function AdminPanel() {
     setSelectedProduct(product);
     setEditItemClicked(true);
   };
-  
 
   return (
     <div className="admin-panel-container">
@@ -228,10 +226,10 @@ export default function AdminPanel() {
           onClose={handleCloseEditItemModal}
         />
       )}
-      <div className="sort-filter-wrapper">
-          <Sort onSortChange={handleSortChange} />
-          <Filter onFilterChange={handleFilterChange} />
-          </div>
+      <div className="admin-sort-filter-wrapper">
+        <Sort onSortChange={handleSortChange} />
+        <Filter onFilterChange={handleFilterChange} />
+      </div>
       <div className="product-list">
         <div className="add-item-card" onClick={handleNewItemClicked}>
           <AddCircleIcon className="add-icon" sx={{ fontSize: 80 }} />

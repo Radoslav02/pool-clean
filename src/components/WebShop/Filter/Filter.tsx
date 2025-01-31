@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import { collection, getDocs } from "firebase/firestore";
 import "./Filter.css";
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { db } from "../../firestore";
 
 type FilterProps = {
@@ -37,8 +36,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
           if (product.type) fetchedTypes.add(product.type);
           if (product.category) fetchedCategories.add(product.category);
           if (product.gender) fetchedGenders.add(product.gender);
-          
-          // Handle size based on its type
+
           if (Array.isArray(product.size)) {
             product.size.forEach((size: string) => {
               fetchedSizes.add(size.trim());
@@ -67,82 +65,90 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         ? prev[filterType].filter((item) => item !== value)
         : [...prev[filterType], value];
 
-      const newFilters = { ...prev, [filterType]: updatedFilter };
-      
-      onFilterChange(newFilters);
-
-      return newFilters;
+      return { ...prev, [filterType]: updatedFilter };
     });
   };
 
+  useEffect(() => {
+    onFilterChange(selectedFilters);
+  }, [selectedFilters, onFilterChange]);
+
   return (
-      <>
-          <div className="filter-icon" id={drawerOpen ? 'active' : ''} onClick={() => setDrawerOpen(!drawerOpen)}>
-              <FilterAltIcon/>
-          </div>
-          <div className={`drawer-content ${drawerOpen ? 'open' : ''}`}>
-          <div className="filter-container">
-      <div className="filter-form">
-        <h3>Tip:</h3>
-        {types.map((type, index) => (
-          <div className="filter-inputs" key={`${type}-${index}`}>
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              value={type}
-              onChange={() => handleCheckboxChange("types", type)}
-            />
-            <label>{type}</label>
-          </div>
-        ))}
+    <>
+      <div
+        className="filter-icon"
+        id={drawerOpen ? "active" : ""}
+        onClick={() => setDrawerOpen(!drawerOpen)}
+      >
+        <FilterAltIcon />
       </div>
-      <div className="filter-form">
-        <h3>Kategorija:</h3>
-        {categories.map((category, index) => (
-          <div className="filter-inputs" key={`${category}-${index}`}>
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              value={category}
-              onChange={() => handleCheckboxChange("categories", category)}
-            />
-            <label>{category}</label>
+      <div className={`drawer-content ${drawerOpen ? "open" : ""}`}>
+        <div className="filter-container">
+          <div className="filter-form">
+            <h3>Tip:</h3>
+            {types.map((type, index) => (
+              <div className="filter-inputs" key={`${type}-${index}`}>
+                <input
+                  className="checkbox-input"
+                  type="checkbox"
+                  value={type}
+                  onChange={() => handleCheckboxChange("types", type)}
+                />
+                <label>{type}</label>
+              </div>
+            ))}
           </div>
-        ))}
+          <div className="filter-form">
+            <h3>Kategorija:</h3>
+            {categories.map((category, index) => (
+              <div className="filter-inputs" key={`${category}-${index}`}>
+                <input
+                  className="checkbox-input"
+                  type="checkbox"
+                  value={category}
+                  onChange={() => handleCheckboxChange("categories", category)}
+                />
+                <label>{category}</label>
+              </div>
+            ))}
+          </div>
+          <div className="filter-form">
+            <h3>Pol:</h3>
+            {genders.map((gender, index) => (
+              <div className="filter-inputs" key={`${gender}-${index}`}>
+                <input
+                  className="checkbox-input"
+                  type="checkbox"
+                  value={gender}
+                  onChange={() => handleCheckboxChange("genders", gender)}
+                />
+                <label>
+                  {gender === "male"
+                    ? "Muškarci"
+                    : gender === "female"
+                    ? "Žene"
+                    : gender}
+                </label>
+              </div>
+            ))}
+          </div>
+          <div className="filter-form">
+            <h3>Veličina:</h3>
+            {sizes.map((size, index) => (
+              <div className="filter-inputs" key={`${size}-${index}`}>
+                <input
+                  className="checkbox-input"
+                  type="checkbox"
+                  value={size}
+                  onChange={() => handleCheckboxChange("sizes", size)}
+                />
+                <label>{size}</label>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="filter-form">
-        <h3>Pol:</h3>
-        {genders.map((gender, index) => (
-          <div className="filter-inputs" key={`${gender}-${index}`}>
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              value={gender}
-              onChange={() => handleCheckboxChange("genders", gender)}
-            />
-            <label>
-              {gender === "male" ? "Muškarci" : gender === "female" ? "Žene" : gender}
-            </label>
-          </div>
-        ))}
-      </div>
-      <div className="filter-form">
-        <h3>Veličina:</h3>
-        {sizes.map((size, index) => (
-          <div className="filter-inputs" key={`${size}-${index}`}>
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              value={size}
-              onChange={() => handleCheckboxChange("sizes", size)}
-            />
-            <label>{size}</label>
-          </div>
-        ))}
-      </div>
-    </div>
-          </div>
-      </>
+    </>
   );
 };
 

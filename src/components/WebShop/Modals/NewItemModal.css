@@ -17,35 +17,21 @@
   display: flex;
   flex-direction: column;
   gap: 35px;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 0 0px 20px 0px;
+  border-radius: 5px;
+  padding: 20px 0px 20px 0px;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) rgb(88, 141, 255);
+
 }
 
 .new-item-form h2 {
   text-align: center;
-  background-color: rgb(88, 141, 255);
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.new-item-form::-webkit-scrollbar {
-  width: 8px;
-}
 
-.new-item-form::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.new-item-form::-webkit-scrollbar-track {
-  background-color: rgba(200, 200, 200, 0.3);
-}
 
 .new-item-input-wrapper {
   display: flex;
@@ -60,7 +46,7 @@
   width: 350px;
   font-size: 16px !important;
   border-radius: 5px;
-  background-color: #dafff8;
+  background-color: #a7e9ff;
   border: none;
   padding: 10px;
 }
@@ -70,7 +56,7 @@
   width: 350px;
   font-size: 16px !important;
   border-radius: 5px;
-  background-color: #dafff8;
+  background-color: #a7e9ff;
   border: none;
   padding: 10px;
 }
@@ -80,7 +66,7 @@
   width: 350px;
   font-size: 16px !important;
   border-radius: 5px;
-  background-color: #dafff8;
+  background-color: #a7e9ff;
   border: none;
 }
 
@@ -151,7 +137,7 @@
 }
 
 .add-button:hover{
-    background-color: #09e0b5;
+    background-color: #a7e9ff;
     cursor: pointer;
 }
 

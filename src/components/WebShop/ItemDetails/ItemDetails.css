@@ -49,8 +49,8 @@
 }
 
 .thumbnail {
-  width: 150px;
-  height: 150px;
+  width: 60px !important;
+  height: 60px !important;
   cursor: pointer;
   margin-bottom: 10px;
   border: 2px solid transparent;
@@ -60,6 +60,8 @@
 
 .thumbnail.selected {
   border: 2px solid rgb(88, 141, 255);
+  width: 60px !important;
+  height: 60px !important;
 }
 
 .product-description {

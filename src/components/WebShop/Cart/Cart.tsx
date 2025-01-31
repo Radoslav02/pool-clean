@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./Cart.css";
-import { Button } from "@mui/material";
 import { RootState } from "../../Redux/store";
 import { removeFromCart } from "../../Redux/cartSlice";
 
@@ -82,10 +81,10 @@ export default function Cart() {
           </div>
 
           <div className="cart-button-wrapper">
-            <Button  variant='contained' sx={{backgroundColor:'primary.main'}} className="to-home-button" onClick={() => navigate("/shop-početna")}>Početna</Button>
-            <Button variant='contained' sx={{backgroundColor:'primary.main'}} onClick={handleOrder} className="order-button">
+            <button   className="to-home-button" onClick={() => navigate("/shop-početna")}>Početna</button>
+            <button    onClick={handleOrder} className="order-button">
               Poruči
-            </Button>
+            </button>
           </div>
         </div>
       )}
