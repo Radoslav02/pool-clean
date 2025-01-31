@@ -32,7 +32,6 @@ const EditItemModal: React.FC<{ product: Product; onClose: () => void }> = ({
   const [name, setName] = useState(product.name);
   const [type, setType] = useState(product.type);
   const [manufacturer, setManufacturer] = useState(product.manufacturer);
-  const [gender, setGender] = useState(product.gender);
   const [size, setSize] = useState(product.size.join(","));
   const [price, setPrice] = useState(String(product.price));
   const [category, setCategory] = useState(product.category);
@@ -166,7 +165,6 @@ const EditItemModal: React.FC<{ product: Product; onClose: () => void }> = ({
         name,
         type,
         manufacturer,
-        gender,
         size: sizes,
         price: parseFloat(price),
         images: imageUrls,
@@ -232,19 +230,6 @@ const EditItemModal: React.FC<{ product: Product; onClose: () => void }> = ({
             onChange={(e) => setManufacturer(e.target.value)}
             required
           />
-        </div>
-
-        <div className="edit-form-group">
-          <label htmlFor="gender">Pol:</label>
-          <select
-            id="gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value as "male" | "female")}
-            required
-          >
-            <option value="male">Muški</option>
-            <option value="female">Ženski</option>
-          </select>
         </div>
 
         <div className="edit-form-group">

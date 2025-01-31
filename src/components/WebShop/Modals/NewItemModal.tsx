@@ -17,7 +17,6 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [type, setType] = useState("");
   const [category, setCategory] = useState(""); 
   const [manufacturer, setManufacturer] = useState("");
-  const [gender, setGender] = useState("male");
   const [size, setSize] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState(""); 
@@ -32,13 +31,11 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     if (e.target.files) {
       const selectedFiles = Array.from(e.target.files);
       
-      // Check the total number of images including previously selected ones
       if (images.length + selectedFiles.length > 5) {
         toast.error("Maksimalan broj slika je 5.");
         return;
       }
-  
-      // If under the limit, update images and previews
+
       setImages((prevImages) => [...prevImages, ...selectedFiles]);
   
       const previews = selectedFiles.map((file) => URL.createObjectURL(file));
@@ -59,7 +56,7 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const imageUrls: string[] = [];
   
     for (const image of images) {
-      const uniqueImageName = `${Date.now()}-${image.name}`; // Dodavanje vremenske oznake za jedinstven naziv
+      const uniqueImageName = `${Date.now()}-${image.name}`; 
       const imageRef = ref(storage, `images/${uniqueImageName}`);
   
       const uploadTask = uploadBytesResumable(imageRef, image);
@@ -120,7 +117,6 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         type,
         category, 
         manufacturer,
-        gender,
         size: sizes,
         price: parseFloat(price),
         description, 
@@ -132,7 +128,6 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       setType("");
       setCategory(""); 
       setManufacturer("");
-      setGender("male");
       setSize("");
       setPrice("");
       setDescription(""); 
@@ -190,17 +185,6 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             onChange={(e) => setManufacturer(e.target.value)}
             required
           />
-        </div>
-        <div className="new-item-input-wrapper">
-          <label>Pol:</label>
-          <select
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            required
-          >
-            <option value="male">Muški</option>
-            <option value="female">Ženski</option>
-          </select>
         </div>
         <div className="new-item-input-wrapper">
           <label>Veličine (odvojene zarezom):</label>

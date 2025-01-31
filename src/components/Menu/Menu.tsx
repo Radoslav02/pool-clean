@@ -19,8 +19,8 @@ export default function Menu() {
         <div className="menu-item" onClick={() => navigate("/početna")}>
           Početna
         </div>
-        <div className="menu-item">Hemija</div>
-        <div className="menu-item">O nama</div>
+        <div className="menu-item" onClick={() => navigate("/hemija")}>Hemija</div>
+        <div className="menu-item" onClick={() => navigate("/about")}>O nama</div>
         <div className="menu-item" onClick={() => navigate("/shop-početna")}>Shop</div>
         <div className="menu-item" onClick={() => navigate("/kontakt")}>Kontakt</div>
       </div>
@@ -37,8 +37,8 @@ export default function Menu() {
           <div className="small-menu-item" onClick={() => navigate("/početna")}>
             Početna
           </div>
-          <div className="small-menu-item">Hemija</div>
-          <div className="small-menu-item">O nama</div>
+          <div className="small-menu-item" onClick={() => navigate("/hemija")}>Hemija</div>
+          <div className="small-menu-item" onClick={() => navigate("/about")}>O nama</div>
           <div className="small-menu-item" onClick={() => navigate("/shop-početna")}>Shop</div>
           <div className="small-menu-item" onClick={() => navigate("/kontakt")}>Kontakt
           </div>

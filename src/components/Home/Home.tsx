@@ -2,10 +2,13 @@ import "./Home.css";
 import CistBazen from "../../assets/CistBazen.jpeg";
 import PrljavBazen from "../../assets/PrljavBazen.jpeg";
 import PoolCleaning from "../../assets/swimming-cleaning.jpg";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-page-container">
       <div className="home-description-left-wrapper">
@@ -57,7 +60,7 @@ export default function Home() {
         <img className="help-description-image" src={PoolCleaning} />
         <div className="home-contact-wrapper">
           <h3 className="promo-text">Potrebna vam je stručna pomoć?</h3>
-          <button>Kontaktirajte nas</button>
+          <button onClick={() => navigate("/kontakt")}>Kontaktirajte nas</button>
         </div>
       </div>
       <div className="phrase-wrapper">

@@ -13,6 +13,8 @@ import AdminPanel from "./components/WebShop/AdminPanel/AdminPanel";
 import Order from "./components/WebShop/Order/Order";
 import ItemDetails from "./components/WebShop/ItemDetails/ItemDetails";
 import Confirmation from "./components/WebShop/Confirmation/Confirmation";
+import Chemicals from "./components/Chemicals/Chemicals";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 export const router = createHashRouter([
     {
@@ -71,6 +73,14 @@ export const router = createHashRouter([
         path: "/shop/poručivanje", 
         element: <Order />, 
       },
+      {
+        path: "/hemija", 
+        element: <Chemicals />, 
+      },
+      {
+        path: "/about", 
+        element: <AboutUs />, 
+      }
     ],
 },
 ]);
