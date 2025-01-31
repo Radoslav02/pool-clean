@@ -28,25 +28,14 @@ export default function Home() {
       </div>
       <div className="home-description-right-wrapper">
         <div className="image-arrows-wrapper">
-          <ArrowBackIosNewIcon
-            className="arrows"
-            onClick={handleAfterClicked}
-          />
-          {!afterClicked ? (
             <div className="image-before-wrapper">
               <img className="right-description-image" src={PrljavBazen} />
               <h3>Pre</h3>
             </div>
-          ) : (
             <div className="image-before-wrapper">
               <img className="right-description-image" src={CistBazen} />
               <h3>Posle</h3>
             </div>
-          )}
-          <ArrowForwardIosIcon
-            className="arrows"
-            onClick={handleAfterClicked}
-          />
         </div>
         <div className="right-desc-wrapper">
           <h3>Šta nudimo?</h3>
