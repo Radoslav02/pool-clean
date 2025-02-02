@@ -232,6 +232,7 @@ const EditItemModal: React.FC<{ product: Product; onClose: () => void }> = ({
           />
         </div>
 
+
         <div className="edit-form-group">
           <label htmlFor="size">Veličine (odvojene zarezom):</label>
           <input

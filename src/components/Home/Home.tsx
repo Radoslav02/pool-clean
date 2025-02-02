@@ -24,11 +24,11 @@ export default function Home() {
       <div className="home-description-right-wrapper">
         <div className="image-arrows-wrapper">
             <div className="image-before-wrapper">
-              <img className="right-description-image" src={PrljavBazen} />
+              <img className="right-description-image" src={PrljavBazen} alt="dirty-pool-picture"/>
               <h3>Pre</h3>
             </div>
             <div className="image-before-wrapper">
-              <img className="right-description-image" src={CistBazen} />
+              <img className="right-description-image" src={CistBazen} alt="clean-pool-picture"/>
               <h3>Posle</h3>
             </div>
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
         <p>• Transparentne cene i bez skrivenih troškova.</p>
       </div>
       <div className="home-description-right-wrapper">
-        <img className="help-description-image" src={PoolCleaning} />
+        <img className="help-description-image" src={PoolCleaning} alt="cleaning-tools-picture" />
         <div className="home-contact-wrapper">
           <h3 className="promo-text">Potrebna vam je stručna pomoć?</h3>
           <button onClick={() => navigate("/kontakt")}>Kontaktirajte nas</button>

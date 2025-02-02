@@ -98,20 +98,20 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!sizePattern.test(size)) {
+  
+    if (size && !sizePattern.test(size)) {
       toast.error(
         "Nepravilan format veličina. Molimo vas da dodate veličine odvojene zarezom (npr., L,M,S or 38,39,40)."
       );
       return;
     }
-
+  
     setLoading(true);
-
+  
     try {
       const imageUrls = await uploadImages();
-      const sizes = size.toUpperCase().split(",").map((s) => s.trim());
-
+      const sizes = size ? size.toUpperCase().split(",").map((s) => s.trim()) : [];
+  
       await addDoc(collection(db, "products"), {
         name,
         type,
@@ -122,7 +122,7 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         description, 
         images: imageUrls,
       });
-
+  
       toast.success("Product added successfully!");
       setName("");
       setType("");
@@ -141,6 +141,7 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       setLoading(false);
     }
   };
+  
 
   if (!user || !user.isAdmin) {
     return <p>Nemaš dozvolu da dodaješ proizvode.</p>;
@@ -187,15 +188,16 @@ const NewItemModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           />
         </div>
         <div className="new-item-input-wrapper">
-          <label>Veličine (odvojene zarezom):</label>
-          <input
-            type="text"
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-            pattern="^([A-Za-z0-9]{1,4})(,([A-Za-z0-9]{1,4}))*$"
-            title="Veličine dodajte sa zarezom (npr., L,M,S or 38,39,40)"
-          />
-        </div>
+  <label>Veličine (odvojene zarezom):</label>
+  <input
+    type="text"
+    value={size}
+    onChange={(e) => setSize(e.target.value)}
+    pattern="^([A-Za-z0-9]{1,4})(,([A-Za-z0-9]{1,4}))*$"
+    title="Veličine dodajte sa zarezom (npr., L,M,S or 38,39,40)"
+  />
+</div>
+
         <div className="new-item-input-wrapper">
           <label>Cena:</label>
           <input
